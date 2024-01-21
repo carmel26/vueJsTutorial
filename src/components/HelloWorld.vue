@@ -1,13 +1,10 @@
 <!-- eslint-disable vuejs-accessibility/form-control-has-label -->
 <template>
   <div class="hello">
-    <button @click="handleClick"> Click me! </button>
-    <h1 id="header">Hi, my name is : {{ myName.toUpperCase() }}</h1>
-    <h3 v-once>{{ myName }}</h3>
-    <button @click="myName = 'Programmer And Developer'"> Change name </button>
-    <div v-html="myContent"></div>
-    <div v-show="isShowing" v-text="myText"></div>
-    <button @click="isShowing = !isShowing"> {{ isShowing ? 'Hide' : 'Show' }} </button>
+    <h3 v-if="location==='One'">One</h3>
+    <h3 v-else-if="location === 'Two'">Two</h3>
+    <h3 v-else>Home</h3>
+    <button @click="location = 'Two'">Click me!</button>
   </div>
 </template>
 
@@ -24,11 +21,7 @@ export default {
   },
   data() {
     return {
-      myName: 'Carmel Nkeshimana',
-      number: 4,
-      myContent: '<b style="color:green"> This is my content </b>',
-      myText: 'Hello word, im learning Vue JS!',
-      isShowing: true,
+      location: 'One',
     };
   },
   props: {
