@@ -1,23 +1,29 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2 :class="myH2">Helloo Second App</h2>
-    <h3>{{  name }}</h3>
-    <div v-bind:id="myId">Hello my di: {{ myId }}</div>
-    <img v-bind:src="mySrc" alt="">
+    <button @click="handleClick"> Click me! </button>
+    <h1 id="header">{{ name }}</h1>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
+  methods: {
+    handleClick(event) {
+      const header = document.getElementById('header');
+      header.style.color = 'brown';
+      // eslint-disable-next-line no-console
+      console.log(event);
+      // eslint-disable-next-line no-param-reassign
+      event.target.style.backgroundColor = 'purple';
+      // eslint-disable-next-line no-param-reassign
+      event.target.style.color = 'white';
+    },
+  },
   data() {
     return {
       name: 'Carmel Nkeshi',
-      age: 30,
-      myId: 'divId',
-      mySrc: 'https://strapi.eacgermany.org/uploads/Untitled_design_cb65dbf158.png',
-      myH2: 'myH2',
+
     };
   },
   props: {
