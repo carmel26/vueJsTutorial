@@ -1,10 +1,7 @@
 <!-- eslint-disable vuejs-accessibility/form-control-has-label -->
 <template>
   <div class="hello">
-    <h3 v-if="location==='One'">One</h3>
-    <h3 v-else-if="location === 'Two'">Two</h3>
-    <h3 v-else>Home</h3>
-    <button @click="location = 'Two'">Click me!</button>
+    <h3 v-for="(letter, index) in alphabet" :key="letter">{{ index+1 +')'+ letter }}</h3>
   </div>
 </template>
 
@@ -22,6 +19,7 @@ export default {
   data() {
     return {
       location: 'One',
+      alphabet: ['One', 'Two', 'Three', 'Four'],
     };
   },
   props: {
