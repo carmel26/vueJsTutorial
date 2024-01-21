@@ -2,10 +2,9 @@
 <template>
   <div class="hello">
     <button @click="handleClick"> Click me! </button>
-    <h3>2+23 = {{ 2+23 }}</h3>
-    <h3> {{ new Date().toLocaleTimeString() }}</h3>
     <h1 id="header">Hi, my name is : {{ name.toUpperCase() }}</h1>
-    <h3>{{ sayHello() }}</h3>
+    <input v-model="text" type="text" name="mytext" id="mytext"> <br>
+    {{ text }}
   </div>
 </template>
 
@@ -19,14 +18,12 @@ export default {
       // eslint-disable-next-line no-console
       console.log(event);
     },
-    sayHello() {
-      return 'HELLÖoOOOO';
-    },
   },
   data() {
     return {
       name: 'Carmel Nkeshimana',
       number: 4,
+      text: '',
     };
   },
   props: {
