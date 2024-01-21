@@ -2,14 +2,10 @@
 <template>
   <div class="hello">
     <button @click="handleClick"> Click me! </button>
-    <h1 id="header">{{ name }}</h1>
-
-    <form @submit.prevent="handleSubmit">
-      <input type="text"  /> <br/>
-      <button type="submit">Submit</button>
-    </form>
-    <button @click.once="onBtnClicked">Click Button</button>
-    <p>{{ number }}</p>
+    <h3>2+23 = {{ 2+23 }}</h3>
+    <h3> {{ new Date().toLocaleTimeString() }}</h3>
+    <h1 id="header">Hi, my name is : {{ name.toUpperCase() }}</h1>
+    <h3>{{ sayHello() }}</h3>
   </div>
 </template>
 
@@ -17,18 +13,14 @@
 export default {
   name: 'HelloWorld',
   methods: {
-    handleSubmit() {
-      // eslint-disable-next-line no-console
-      console.log('Form submitted');
-    },
-    onBtnClicked() {
-      this.number += 1;
-    },
     handleClick(event) {
       const header = document.getElementById('header');
       header.style.color = 'blue';
       // eslint-disable-next-line no-console
       console.log(event);
+    },
+    sayHello() {
+      return 'HELLÖoOOOO';
     },
   },
   data() {
