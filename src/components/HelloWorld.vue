@@ -1,7 +1,8 @@
 <!-- eslint-disable vuejs-accessibility/form-control-has-label -->
 <template>
   <div class="hello">
-    <button v-on:click="onClickButton">click me!</button>
+   <span v-pre>{{ myName }}</span> <br>
+   <span>{{ myName }}</span>
   </div>
 </template>
 
@@ -16,7 +17,7 @@ export default {
   },
   data() {
     return {
-      text: '',
+      myName: 'Nkeshimana',
     };
   },
   props: {
