@@ -1,7 +1,7 @@
 <!-- eslint-disable vuejs-accessibility/form-control-has-label -->
 <template>
   <div class="hello">
-    <h3 v-for="(letter, index) in alphabet" :key="letter">{{ index+1 +')'+ letter }}</h3>
+    <button v-on:click="onClickButton">click me!</button>
   </div>
 </template>
 
@@ -9,17 +9,14 @@
 export default {
   name: 'HelloWorld',
   methods: {
-    handleClick(event) {
-      const header = document.getElementById('header');
-      header.style.color = 'blue';
+    onClickButton() {
       // eslint-disable-next-line no-console
-      console.log(event);
+      console.log('Hello my people!!');
     },
   },
   data() {
     return {
-      location: 'One',
-      alphabet: ['One', 'Two', 'Three', 'Four'],
+      text: '',
     };
   },
   props: {
